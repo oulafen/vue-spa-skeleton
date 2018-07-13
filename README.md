@@ -17,7 +17,14 @@ npm run build
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+### 构建过程
 - 初始化
 ```
 vue init webpack-simple vue-spa-skeleton
 ```
+
+- 安装依赖
+```
+npm install lodash axios vue-router vuex postcss-cssnext --save
+```
+
