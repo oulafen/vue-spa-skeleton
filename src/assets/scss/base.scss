@@ -1,0 +1,185 @@
+@import "definition";
+@import "mixin";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font: inherit;
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  -moz-touch-callout: none;
+  -ms-touch-callout: none;
+  touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+}
+body::-webkit-scrollbar {
+  display:none
+}
+
+img {
+  vertical-align: baseline;
+}
+
+a {
+  color: inherit;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+  font-size: 0.7rem;
+  line-height: 1;
+  background-color: $_page_bg_color;
+  color: $_main_font_color;
+  font-family: $_font_normal;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width:0;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+  border-radius:10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius:10px;
+  background:rgba(0,0,0,0.1);
+  -webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background:rgba(0,0,0,0.1);
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+textarea::-webkit-input-placeholder, textarea::-moz-placeholder, textarea:-ms-input-placeholder {
+  color: $_desc_font_color;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  background-color: $_desc_font_color;
+  color: $_main_font_color;
+  padding: 0;
+  line-height: 2.2rem;
+  font-family: $_font_main;
+  &.btn-radius {
+    border-radius: 0.15rem;
+  }
+  &.default-btn {
+    background-color: $_desc_font_color;
+    color: $_page_bg_color;
+  }
+  &.primary-btn {
+    color: $_main_font_color;
+    background-color: $_active_color;
+  }
+  &.success-btn {
+    background-color: $_box_bg_color;
+    color: $_active_color;
+  }
+  &.disabled-btn {
+    background-color: $_box_bg_color;
+    color: $_desc_font_color;
+  }
+  &.cancel-btn {
+    background-color: $_active_color;
+    color: $_main_font_color;
+  }
+}
+v-cloak{
+  display: none;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+.child-view {
+  position: absolute;
+  transition: all .3s cubic-bezier(.55, 0, .1, 1);
+}
+
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+  transform: translate(30px, 0);
+}
+
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-30px, 0);
+  transform: translate(-30px, 0);
+}
+.clearfix{
+  clear: both;
+}
+.loading-fullpage{
+  position: fixed !important;
+  height: 100%;
+}
+
+.scrollBarShow::-webkit-scrollbar{
+  width: 0.1rem;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//1像素border
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+  .border-1px:after {
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .border-1px:after {
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+  }
+}
+

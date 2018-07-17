@@ -1,0 +1,20 @@
+{
+  "data": {
+    "user_info": {
+      "birthday": "1991-8-23",
+      "email": "aa@qq.com",
+      "height": 159,
+      "avatar": "http://thirdwx.qlogo.cn/mmopen/dF8LkWqP2EYj7icn5rSZCvqPO67VVpjZlCYfeMIS4QHZaSBuQ1ibtEgn5Q7XBwW4q9GPxelvmO0p743bDTKNY6BKpykRNLkTVx/132",
+      "phone": "15000007777",
+      "sex": 2,
+      "user_id": 100246,
+      "weight": 51,
+      "points": 767,
+      "balance": 27147.6,
+      "card_num": "S20180313100246",
+      "nickname": "oulafen",
+      "vip_lv": 1
+    }
+  },
+  "error_code": 0
+}

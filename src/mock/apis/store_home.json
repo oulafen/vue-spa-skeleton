@@ -1,0 +1,82 @@
+{
+  "data": {
+    "next_pos": -1,
+    "provinces": [
+      {
+        "districts": [
+          {
+            "id": 110105,
+            "name": "\u671d\u9633\u533a",
+            "store_count": 3
+          },
+          {
+            "id": 110108,
+            "name": "\u6d77\u6dc0\u533a",
+            "store_count": 2
+          }
+        ],
+        "id": "110000",
+        "name": "\u5317\u4eac\u5e02"
+      }
+    ],
+    "store_type": [
+      "CENTER",
+      "BOX",
+      "YOGA"
+    ],
+    "stores": [
+      {
+        "address": "\u5317\u4eac\u5e02\u671d\u9633\u533a\u4e09\u91cc\u5c6fSOHO5\u53f7\u5546\u573a-\u5730\u4e0b\u4e00\u5c42-1512",
+        "cover": "http://statics.oulafen.com/fe_burning/temp/store-2.jpg",
+        "distance": 1012.9041311353985,
+        "id": 10003,
+        "latitude": 39.920454,
+        "longitude": 116.455277,
+        "name": "\u4e09\u91cc\u5c6f\u5e97",
+        "type": "CENTER"
+      },
+      {
+        "address": "\u5317\u4eac\u5e02\u671d\u9633\u533a\u671d\u5916\u5927\u8857\u4e596\u53f7D\u5ea70175/0191\u5546\u94fa",
+        "cover": "https://img.runninglemon.com/coach/1520585860236.jpg",
+        "distance": 1012.9041311353985,
+        "id": 10001,
+        "latitude": 39.920454,
+        "longitude": 116.455277,
+        "name": "\u671d\u5916\u5e97",
+        "type": "CENTER"
+      },
+      {
+        "address": "\u5317\u4eac\u5e02\u6d77\u6dc0\u533a\u4e2d\u5173\u6751\u5357\u4e09\u88576\u53f7\u4e2d\u79d1\u8d44\u6e90\u5927\u53a6\u5e95\u5546",
+        "cover": "https://img.runninglemon.com/coach/1527480295570.jpg",
+        "distance": 12228062.276744118,
+        "id": 10006,
+        "latitude": 0.0,
+        "longitude": 0.0,
+        "name": "\u4e2d\u5173\u6751\u878d\u79d1\u745c\u4f3d\u9986",
+        "type": "YOGA"
+      },
+      {
+        "address": "\u5317\u4eac\u5e02\u6d77\u6dc0\u533a\u4e2d\u5173\u6751\u5357\u4e09\u88576\u53f7\u4e2d\u79d1\u8d44\u6e90\u5927\u53a6\u5e95\u5546",
+        "cover": "https://img.runninglemon.com/coach/1527480146508.jpg",
+        "distance": 12228062.276744118,
+        "id": 10005,
+        "latitude": 0.0,
+        "longitude": 0.0,
+        "name": "\u4e2d\u5173\u6751\u878d\u79d1\u5e97",
+        "type": "CENTER"
+      },
+      {
+        "address": "\u5317\u4eac\u5e02\u671d\u9633\u533a\u9152\u4ed9\u6865\u4e1c\u8def14\u53f7",
+        "cover": "https://img.runninglemon.com/coach/1527155416473.jpg",
+        "distance": 12228062.276744118,
+        "id": 10004,
+        "latitude": 0.0,
+        "longitude": 0.0,
+        "name": "\u5c06\u53f0\u5e97",
+        "type": "CENTER"
+      }
+    ]
+  },
+  "error_code": 0,
+  "msg": "success"
+}

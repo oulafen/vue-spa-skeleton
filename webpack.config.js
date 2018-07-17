@@ -1,12 +1,16 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
+var HTMLWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    // publicPath: '/dist/',
+    // filename: 'build.js',
+    chunkFilename: 'chunks/[name]-[chunkhash:8].js'
   },
   module: {
     rules: [
@@ -64,14 +68,19 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: 'images/[name].[ext]?[hash]'
         }
       }
     ]
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'components': path.resolve(__dirname, './src/components'),
+      'util': path.resolve(__dirname, './src/util'),
+      'assets': path.resolve(__dirname, './src/assets'),
+      'partials': path.resolve(__dirname, './src/partials'),
+      'views': path.resolve(__dirname, './src/views')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -83,12 +92,26 @@ module.exports = {
   performance: {
     hints: false
   },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      vue: {
+        // 使用用户自定义插件
+        postcss: [require('postcss-cssnext')()]
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common', // 指定公共 bundle 的名称。
+    }),
+    new CleanWebpackPlugin(['dist/*.js'])
+  ],
   devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.output.filename = `[name]-${Date.parse(new Date())}.build.js`;
+
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -96,13 +119,26 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       compress: {
         warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'index.html',
+      template: './index_template.html',
+    }),
   ])
+}
+
+if (process.env.NODE_ENV === 'development') {
+  module.exports.output.publicPath = '/dist/';
+  module.exports.output.filename = '[name].build.js';
+
+  /** mock data 模拟本地开发api **/
+  var mock = require('./src/mock/index.js');
+  mock.api(module);
 }
